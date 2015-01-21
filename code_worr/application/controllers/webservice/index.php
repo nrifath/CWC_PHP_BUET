@@ -28,13 +28,7 @@ class Index extends CI_Controller {
     }
 
 	
-	function login(){
-		
-		$this->load->view("template/header.php");
-		$this->load->view("login.php");
-		$this->load->view("template/footer.php");
-		
-	}
+	
 	
 	function registration(){
 		
