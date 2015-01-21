@@ -77,6 +77,66 @@ class Index extends CI_Controller {
 		
 	}
 	
+	function add_product(){
+		
+		//UC
+		
+		$data = array();
+		
+		if(!isset($_SESSION['code_warrior_user_id'])){
+			header("Location:login");
+		}
+		
+		$userDetails = $this->User_product_model->GetDetails($_SESSION['code_warrior_user_id']);
+		$data['userDetails'] = $userDetails;
+		
+		
+		
+		$this->load->view("template/header.php");
+		$this->load->view("add_product.php", $data);
+		$this->load->view("template/footer.php");
+			
+	}
+	
+	function my_product(){
+		
+		//UC
+		
+		$data = array();
+		
+		if(!isset($_SESSION['code_warrior_user_id'])){
+			header("Location:login");
+		}
+		
+		$userDetails = $this->User_product_model->GetDetails($_SESSION['code_warrior_user_id']);
+		$data['userDetails'] = $userDetails;
+		
+		
+		$this->load->view("template/header.php");
+		$this->load->view("my_product.php", $data);
+		$this->load->view("template/footer.php");
+			
+	}
+	
+	function my_purchased_product(){
+		
+		//UC
+		
+		$data = array();
+		
+		if(!isset($_SESSION['code_warrior_user_id'])){
+			header("Location:login");
+		}
+		
+		$userDetails = $this->User_product_model->GetDetails($_SESSION['code_warrior_user_id']);
+		$data['userDetails'] = $userDetails;
+		
+		
+		$this->load->view("template/header.php");
+		$this->load->view("my_purchased_product.php", $data);
+		$this->load->view("template/footer.php");
+			
+	}
 	
 	function logout(){
 		
